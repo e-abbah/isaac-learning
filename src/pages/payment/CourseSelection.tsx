@@ -27,8 +27,10 @@ function CourseSelection() {
   ]
 
   return (
+
     <div className='bg-green-100 py-24'>
       <h1>Esuga</h1>
+      <h1>Okogod</h1>
       <div className='bg-amber-100 rounded-sm text-2xl text-black '>
         <div className='mb-10'>
           <h1 className='text-[#414D58] text-4xl! mb-2 font-bold'>Welcome to Isaac Learning System!</h1>
