@@ -15,7 +15,7 @@ function PricePlan() {
       <div className='w-full max-w-screen-xl mx-auto'>
         <div className=' rounded-sm text-2xl text-black '>
           <div className='mb-10 '>
-            <h1 className='text-[#00A36C] text-4xl! mb-2 font-bold'>Choose a price plan for CIPM Exam</h1>
+            <h1 className='text-primary-green text-4xl! mb-2 font-bold'>Choose a price plan for CIPM Exam</h1>
             <p className='text-[#7F8C8D] text-base! mb-10'>Select the payment plan that feel just right for you. Small investment, huge productivity.</p>
             <img src={Icons} alt="" className='w-full  justify-self-center' />
             <div className='flex justify-between'>
