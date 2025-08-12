@@ -27,6 +27,7 @@ import PricePlan from './pages/payment/PricePlan';
 
 // Componenets
 import ScrollToTop from './components/ScrollToTop';
+import IndividualPayment from './pages/payment/IndividualPayment';
 
 
 function App() {
@@ -56,7 +57,10 @@ function App() {
           <Route path='notification' element={<Notification />} />
         </Route>
 
+        <Route path='/course' element={<CourseSelection />} />
+        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/price' element={<PricePlan />} />
+        <Route path='/payment' element={<IndividualPayment />} />
       </Routes>
 
     </BrowserRouter>
