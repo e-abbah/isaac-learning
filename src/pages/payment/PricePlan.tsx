@@ -3,6 +3,7 @@ import BackDrop from '../../assets/images/payment-images/price-backdrop.png'
 import Individual from '../../assets/images/payment-images/individual-icon.png'
 import Family from '../../assets/images/payment-images/family-icon.png'
 import List1 from '../../assets/images/payment-images/list1-icon.png'
+import '../../App.css'
 
 function PricePlan() {
 
@@ -10,7 +11,7 @@ function PricePlan() {
   const famBenefits: string[] = ['Allows groups, team, families', 'Each user has full access to preferred course', 'Community and daily nuggets', 'No in-app purchases', 'Unlimited learning']
 
   return (
-    <div className='flex w-screen bg-gradient-to-b from-white via-[#B4E4D4]  to-[#00A36C] py-18 lg:px-24 sm:px-12'>
+    <div className='flex w-screen bg-gradient-to-b from-white via-[#B4E4D4]  to-[#00A36C] py-18 lg:px-24 sm:px-12 text-center'>
       <div className='w-full max-w-screen-xl mx-auto'>
         <div className=' rounded-sm text-2xl text-black '>
           <div className='mb-10 '>

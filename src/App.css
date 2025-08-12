@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
-#root {
-  /* max-width: 1800px;
-  margin: 0 2rem; */
-  /* padding: 2rem; */
-  text-align: center;
+@theme {
+  --color-brand-blue: #1fb6ff;
+  --color-brand-purple: #7e5bef;
+  --color-brand-pink: #ff49db;
+  --color-custom-primary: #your-color;
+  --color-custom-secondary: #your-other-color;
 }
 
+/* #root { */
+/* max-width: 1800px;
+  margin: 0 2rem; */
+/* padding: 2rem; */
+/* text-align: center; */
+/* } */
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -33,15 +41,15 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
-.card {
+/* .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
-}
+} */
 
 /* .bg-new-boy {
   width: 100%;
