@@ -8,27 +8,27 @@ import { useEffect, useState } from 'react';
 
 // Assets
 import Logo from '../../assets/images/logo.png';
-import DashboardIconWhite from '../dashboard/../../assets/images/icons/dashboard-icon-white.png';
-import ModulesIconWhite from '../../assets/images/icons/modules-icon-white.png';
-import QuizIconWhite from '../../assets/images/icons/quiz-icon-white.png'
-import MockIconWhite from '../../assets/images/icons/mock-icon-white.png';
-import NotificationIconWhite from '../../assets/images/icons/notification-icon-white.png';
-import ProfileIconWhite from '../../assets/images/icons/profile-icon-white.png';
-import CommunityIconWhite from '../../assets/images/icons/community-icon-white.png';
+import DashboardIconWhite from '../dashboard/../../assets/images/icons/dashboard-icons/dashboard-icon-white.png';
+import ModulesIconWhite from '../../assets/images/icons/dashboard-icons/modules-icon-white.png';
+import QuizIconWhite from '../../assets/images/icons/dashboard-icons/quiz-icon-white.png'
+import MockIconWhite from '../../assets/images/icons/dashboard-icons/mock-icon-white.png';
+import NotificationIconWhite from '../../assets/images/icons/dashboard-icons/notification-icon-white.png';
+import ProfileIconWhite from '../../assets/images/icons/dashboard-icons/profile-icon-white.png';
+import CommunityIconWhite from '../../assets/images/icons/dashboard-icons/community-icon-white.png';
 
-import DashbboardIconGreen from '../../assets/images/icons/dashboard-icon-green.png';
-import ModulesIconGreen from '../../assets/images/icons/modules-icon-green.png';
-import QuizIconGreen from '../../assets/images/icons/quiz-icon-green.png';  
-import MockIconGreen from '../../assets/images/icons/mock-icon-green.png';
-import NotificationIconGreen from '../../assets/images/icons/notification-icon-green.png';
-import ProfileIconGreen from '../../assets/images/icons/profile-icon-green.png';
-import CommunityIconGreen from '../../assets/images/icons/community-icon-green.png';
+import DashbboardIconGreen from '../../assets/images/icons/dashboard-icons/dashboard-icon-green.png';
+import ModulesIconGreen from '../../assets/images/icons/dashboard-icons/modules-icon-green.png';
+import QuizIconGreen from '../../assets/images/icons/dashboard-icons/quiz-icon-green.png';
+import MockIconGreen from '../../assets/images/icons/dashboard-icons/mock-icon-green.png';
+import NotificationIconGreen from '../../assets/images/icons/dashboard-icons/notification-icon-green.png';
+import ProfileIconGreen from '../../assets/images/icons/dashboard-icons/profile-icon-green.png';
+import CommunityIconGreen from '../../assets/images/icons/dashboard-icons/community-icon-green.png';
 
 
 
 const Dashboard = () => {
 
-    
+
     const { pathname } = useLocation();
     const [currentPath, setCurrentPath] = useState(pathname);
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
         setCurrentPath(pathname);
     }, [pathname]);
 
-    
+
 
 
 
@@ -52,37 +52,37 @@ const Dashboard = () => {
                     <nav className='flex flex-col gap-[20px]'>
 
                         <Link to='/dashboard' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard"? DashbboardIconGreen : DashboardIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard" ? DashbboardIconGreen : DashboardIconWhite} alt='module icon' />
                             Dashboard
                         </Link>
 
                         <Link to='modules' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard/modules" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/modules"? ModulesIconGreen : ModulesIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/modules" ? ModulesIconGreen : ModulesIconWhite} alt='module icon' />
                             Modules
                         </Link>
 
                         <Link to='quiz' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard/quiz" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/quiz"? QuizIconGreen : QuizIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/quiz" ? QuizIconGreen : QuizIconWhite} alt='module icon' />
                             Quizzes
                         </Link>
 
                         <Link to='mock-exam' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard/mock-exam" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/mock-exam"? MockIconGreen : MockIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/mock-exam" ? MockIconGreen : MockIconWhite} alt='module icon' />
                             Mock exams
                         </Link>
 
                         <Link to='community' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard/community" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/community"? CommunityIconGreen : CommunityIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/community" ? CommunityIconGreen : CommunityIconWhite} alt='module icon' />
                             Community
                         </Link>
 
                         <Link to='profile' className={`flex gap-[16px] text-[#fff] py-5 px-[10px] w-50 mx-10 ${currentPath == "/dashboard/profile" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/profile"? ProfileIconGreen : ProfileIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/profile" ? ProfileIconGreen : ProfileIconWhite} alt='module icon' />
                             Profile
                         </Link>
 
                         <Link to='notification' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard/notification" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={ currentPath == "/dashboard/notification"? NotificationIconGreen : NotificationIconWhite} alt='module icon' />
+                            <img src={currentPath == "/dashboard/notification" ? NotificationIconGreen : NotificationIconWhite} alt='module icon' />
                             Notification
                         </Link>
                     </nav>
