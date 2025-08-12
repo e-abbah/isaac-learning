@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CourseSelection from './pages/payment/CourseSelection'
+import PricePlan from './pages/payment/PricePlan'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<CourseSelection />} />
+        <Route path='/price' element={<PricePlan />} />
       </Routes>
       {/* <div>
         <a href="https://vite.dev" target="_blank">
