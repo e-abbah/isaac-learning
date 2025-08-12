@@ -2,6 +2,7 @@
 // Assets
 import Pfp from '../dashboard/../../assets/images/profile-images/pfp.png';
 import ProfileIcon from '../dashboard/../../assets/images/profile-images/add-profile-icon.png';
+import EditIcon from '../dashboard/../../assets/images/icons/Edit.png'
 
 const Profile = () => {
 
@@ -14,7 +15,7 @@ const Profile = () => {
 
             <p className="font-[700] mb-10">My Profile</p>
 
-            <div>
+            <div className='flex justify-between align-center bg-[#00a36cff] py-50 px-40'>
 
                 <div className='flex align-center gap-[20px]'>
 
@@ -33,13 +34,14 @@ const Profile = () => {
                     </div>
                 </div>
 
-                <div>
-                    <button>
-
-                    </button>
-                </div>
+                <button className='flex align-center justify-center gap-[8px] bg-[#fcfcfc]  h-[50px] w-[137px] py-[15px] rounded-[10px]'>
+                    <p className='text-[#00a36cff] font-bold'>Edit bio</p>
+                    <img src={EditIcon} className='w-[25px] h-[25px]' alt='edit icon' />
+                </button>
 
             </div>
+
+
 
         </section>
     )

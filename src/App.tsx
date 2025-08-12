@@ -1,9 +1,11 @@
-import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
 
 // Pages Import
-import CourseSelection from './pages/payment/CourseSelection';
 import Dashboard from './pages/dashboard/Dashboard';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CourseSelection from './pages/payment/CourseSelection'
+import PricePlan from './pages/payment/PricePlan'
+
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
 
 
+        <Route path='/price' element={<PricePlan />} />
       </Routes>
 
     </BrowserRouter>
