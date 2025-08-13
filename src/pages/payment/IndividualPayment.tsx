@@ -25,7 +25,7 @@ function IndividualPayment() {
             <p className="text-sub-gray text-xs text-left mb-2">Plan</p>
             <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] mb-5 text-left">Individual</div>
             <p className="text-sub-gray text-xs text-left mb-2">Price</p>
-            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] text-left">₦20,000</div>
+            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] text-left mb-5">₦20,000</div>
           </div>
           <div className="lg:w-[48%] items-start  text-left max-h-[276px]  content-between flex flex-col justify-between sm:w-full">
             <div className=" w-full">
@@ -42,7 +42,7 @@ function IndividualPayment() {
                 onChange={(e) => setCardNumnber(e.target.value)}
               />
             </div>
-            <div className="flex  w-full justify-between sm:gap-2">
+            <div className="flex  w-full justify-between sm:gap-2 mb-5">
               <div className="flex flex-col  basis-7/15">
                 <p className="text-sub-gray text-xs text-left mb-2">Expiry date</p>
                 <input type="text" name="" id="" className={`border-1 px-4 py-[10px] rounded-[10px] focus:outline-primary-green ${expiryDate ? 'outline-primary-green border-primary-green ' : 'border-sub-gray'}`}
@@ -60,7 +60,7 @@ function IndividualPayment() {
             </div>
           </div>
         </div>
-        <div className="lg:w-[50%] self-center m-auto mt-4">
+        <div className="w-full  mt-2">
           {isFamily ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> : <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
         </div>
       </div>
