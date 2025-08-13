@@ -1,6 +1,8 @@
 import { useState } from "react"
-import React from "react"
 import { IndividualForm, FamilyForm } from "../../components/payment/PaymentForms"
+import arrow from "../../assets/images/icons/payment-icons/arrow-left.png"
+import { Link, Outlet } from "react-router-dom"
+import { usePayment } from "../../context/PaymentContext"
 
 
 function IndividualPayment() {
@@ -9,11 +11,17 @@ function IndividualPayment() {
   const [cardNumber, setCardNumnber] = useState('0000-0000-0000-0000')
   const [expiryDate, setExpiryDate] = useState('25/24')
   const [cvv, setCvv] = useState('000')
+  const { selectedCourse, selectedPayment } = usePayment()
 
 
   return (
     <div className="text-center py-20 px-20">
-      <div className="content-centerr">
+      <div className="content-center">
+        <Link to='/price'>
+          <div className="text-slate-gray p-[10px] text-[14px] font-bold w-[91px] justify-between flex bg-[#EBEBEB] rounded-xl cursor-pointer">
+            <img src={arrow} />
+            <p>Back</p>
+          </div></Link>
         <div className="mb-10">
           <h1 className="text-[40px] font-bold text-slate-gray">Make Payment</h1>
           <p className="text-[18px] text-[#7F8C8D]">Kindly enter the correct details to make payment for your selected course</p>
@@ -21,11 +29,11 @@ function IndividualPayment() {
         <div className="lg:flex  justify-between items-stretch">
           <div className="flex flex-col justify-between lg:w-[48%] h-[276px]   sm:w-full sm:mb-5">
             <p className="text-sub-gray text-xs text-left mb-2">Course</p>
-            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] mb-5 text-left">CIPM HR exam</div>
+            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] mb-5 text-left">{selectedCourse.title}</div>
             <p className="text-sub-gray text-xs text-left mb-2">Plan</p>
-            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] mb-5 text-left">Individual</div>
+            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] mb-5 text-left">{selectedPayment.type}</div>
             <p className="text-sub-gray text-xs text-left mb-2">Price</p>
-            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] text-left mb-5">₦20,000</div>
+            <div className="border-1 border-primary-green px-4 py-[10px] text-sm text-slate-gray rounded-[10px] text-left mb-5">{selectedPayment.price}</div>
           </div>
           <div className="lg:w-[48%] items-start  text-left max-h-[276px]  content-between flex flex-col justify-between sm:w-full">
             <div className=" w-full">
@@ -64,6 +72,7 @@ function IndividualPayment() {
           {isFamily ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> : <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
         </div>
       </div>
+      <Outlet />
     </div>
   )
 }

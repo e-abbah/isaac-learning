@@ -3,6 +3,9 @@ import './App.css';
 // Recat Router Hooks
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+// Context Provider Import
+import { PaymentProvider } from './context/PaymentContext';
+
 // Pages Import
 import Dashboard from './pages/dashboard/Dashboard';
 
@@ -21,7 +24,6 @@ import Settings from './pages/profile/Settings';
 import Notification from './pages/notification/Notification';
 
 
-
 import CourseSelection from './pages/payment/CourseSelection';
 import PricePlan from './pages/payment/PricePlan';
 
@@ -34,38 +36,39 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
+      <PaymentProvider>
+        <ScrollToTop />
+        <Routes>
 
-        <Route path='/' element={<CourseSelection />} />
+          <Route path='/' element={<CourseSelection />} />
 
-        {/* Dashboard page and all its sub pages */}
-        <Route path='dashboard' element={<Dashboard />} >
-          <Route index element={<MainDashboard />} />
-          <Route path='dashboard' element={<MainDashboard />} />
-          <Route path='modules' element={<Modules />} />
-          <Route path='quiz' element={<Quiz />} />
-          <Route path='mock-exam' element={<MockExam />} />
-          <Route path='community' element={<Community />} />
+          {/* Dashboard page and all its sub pages */}
+          <Route path='dashboard' element={<Dashboard />} >
+            <Route index element={<MainDashboard />} />
+            <Route path='dashboard' element={<MainDashboard />} />
+            <Route path='modules' element={<Modules />} />
+            <Route path='quiz' element={<Quiz />} />
+            <Route path='mock-exam' element={<MockExam />} />
+            <Route path='community' element={<Community />} />
 
-          {/* Profile page and its ub pages */}
-          <Route path='profile' element={<Profile />} >
-            <Route index element={<ProgressSummary />} />
-            <Route path='progress-summary' element={<ProgressSummary />} />
-            <Route path='activity' element={<Activity />} />
-            <Route path='bookmarks' element={<Bookmarks />} />
-            <Route path='settings' element={<Settings />} />
+            {/* Profile page and its ub pages */}
+            <Route path='profile' element={<Profile />} >
+              <Route index element={<ProgressSummary />} />
+              <Route path='progress-summary' element={<ProgressSummary />} />
+              <Route path='activity' element={<Activity />} />
+              <Route path='bookmarks' element={<Bookmarks />} />
+              <Route path='settings' element={<Settings />} />
+            </Route>
+
+            <Route path='notification' element={<Notification />} />
           </Route>
 
-          <Route path='notification' element={<Notification />} />
-        </Route>
-
-        <Route path='/course' element={<CourseSelection />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/price' element={<PricePlan />} />
-        <Route path='/payment' element={<IndividualPayment />} />
-      </Routes>
-
+          <Route path='/course' element={<CourseSelection />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/price' element={<PricePlan />} />
+          <Route path='/payment' element={<IndividualPayment />} />
+        </Routes>
+      </PaymentProvider>
     </BrowserRouter>
   )
 }

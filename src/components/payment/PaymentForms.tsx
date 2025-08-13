@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Modal from "./CompletionModal"
-import { ModalDetails } from "./ModalDetails"
+import Modal from "../Modal/CompletionModal"
+import { ModalDetails } from "../Modal/ModalDetails"
 
 export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
@@ -8,7 +8,7 @@ export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, s
       <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto'
         onClick={() => setIsFamily(!isFamily)}
       >Pay ₦20,000</button>
-      <Modal isFamily={isFamily} onClose={() => setIsFamily(false)}>
+      <Modal isFamily={isFamily} >
         <ModalDetails setIsFamily={setIsFamily} />
       </Modal>
     </div>
