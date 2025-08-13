@@ -42,34 +42,6 @@ function App() {
           {/* 
           <Route path='/' element={<CourseSelection />} /> */}
 
-<<<<<<< HEAD
-        {/* Dashboard page and all its sub pages */}
-        <Route path='dashboard' element={<Dashboard />} >
-          <Route index element={<MainDashboard />} />
-          <Route path='dashboard' element={<MainDashboard />} />
-          <Route path='modules' element={<Modules />} />
-          <Route path='quiz' element={<Quiz />} />
-          <Route path='mock-exam' element={<MockExam />} />
-          <Route path='community' element={<Community />} />
-          <Route path='notification' element={<Notification />} />
-
-          {/* Profile page and its sub pages */}
-          <Route path='profile' element={<Profile />} >
-          <Route index element={<ProgressSummary />} />
-            <Route path='progress-summary' element={<ProgressSummary />} />
-            <Route path='activity' element={<Activity />} />
-            <Route path='bookmarks' element={<Bookmarks />} />
-            <Route path='settings' element={<Settings />} />
-          </Route>
-
-        </Route>
-
-        <Route path='/course' element={<CourseSelection />} />
-        <Route path='/price' element={<PricePlan />} />
-        <Route path='/payment' element={<IndividualPayment />} />
-      </Routes>
-
-=======
           {/* Dashboard page and all its sub pages */}
           <Route path='dashboard' element={<Dashboard />} >
             <Route index element={<MainDashboard />} />
@@ -79,7 +51,7 @@ function App() {
             <Route path='mock-exam' element={<MockExam />} />
             <Route path='community' element={<Community />} />
 
-            {/* Profile page and its ub pages */}
+            {/* Profile page and its sub pages */}
             <Route path='profile' element={<Profile />} >
               <Route index element={<ProgressSummary />} />
               <Route path='progress-summary' element={<ProgressSummary />} />
@@ -97,7 +69,6 @@ function App() {
           <Route path='/payment' element={<IndividualPayment />} />
         </Routes>
       </PaymentProvider>
->>>>>>> 57ebbd1e7c6e18a43f3c6584e902f763ea0eb0aa
     </BrowserRouter>
   )
 }
