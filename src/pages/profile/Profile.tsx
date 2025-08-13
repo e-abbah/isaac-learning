@@ -1,5 +1,8 @@
 // React Router Hooks
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+
+// React Hooks
+import { useEffect, useState } from 'react';
 
 
 // Assets
@@ -8,6 +11,15 @@ import ProfileIcon from '../../assets/images/profile-images/add-profile-icon.png
 import EditIcon from '../../assets/images/icons/dashboard-icons/Edit.png';
 
 const Profile = () => {
+
+    const { pathname } = useLocation();
+    const [indexPath, setIndexPath] = useState(pathname);
+
+    useEffect(() => {
+        setIndexPath(pathname);
+    },[pathname]);
+
+
 
     document.title = "profile - Isaac Learning";
 
@@ -45,21 +57,21 @@ const Profile = () => {
 
             </div>
 
-            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw]'>
+            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw] mb-[24px]'>
 
-                <NavLink to='progress-summary' className={ ({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap' }>
+                <NavLink to='progress-summary' className={indexPath == "/dashboard/profile" || indexPath == "/dashboard/profile/progress-summary" ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap'}>
                     Progress Summary
                 </NavLink>
 
-                <NavLink to='activity' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'py-[13px] px-[100px] text-center text-nowrap'} >
+                <NavLink to='activity' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'py-[13px] px-[100px] text-center text-nowrap'} >
                     Activity
                 </NavLink>
 
-                <NavLink to='bookmarks' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                <NavLink to='bookmarks' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
                     Bookmarks
                 </NavLink>
 
-                <NavLink to='settings' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%]   py-[13px] border-primary-green  border-b-[3px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                <NavLink to='settings' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%]   py-[13px] border-primary-green  border-b-[3px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
                     Settings
                 </NavLink>
             </nav>

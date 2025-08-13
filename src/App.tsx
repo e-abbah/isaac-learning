@@ -47,21 +47,20 @@ function App() {
           <Route path='quiz' element={<Quiz />} />
           <Route path='mock-exam' element={<MockExam />} />
           <Route path='community' element={<Community />} />
+          <Route path='notification' element={<Notification />} />
 
-          {/* Profile page and its ub pages */}
+          {/* Profile page and its sub pages */}
           <Route path='profile' element={<Profile />} >
-            <Route index element={<ProgressSummary />} />
+          <Route index element={<ProgressSummary />} />
             <Route path='progress-summary' element={<ProgressSummary />} />
             <Route path='activity' element={<Activity />} />
             <Route path='bookmarks' element={<Bookmarks />} />
             <Route path='settings' element={<Settings />} />
           </Route>
 
-          <Route path='notification' element={<Notification />} />
         </Route>
 
         <Route path='/course' element={<CourseSelection />} />
-        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/price' element={<PricePlan />} />
         <Route path='/payment' element={<IndividualPayment />} />
       </Routes>
