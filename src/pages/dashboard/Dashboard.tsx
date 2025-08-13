@@ -45,7 +45,7 @@ const Dashboard = () => {
             <section className='flex align-center'>
 
 
-                <div className='w-[280px] h-[1000px] bg-primary-green pt-20 '>
+                <div className='w-[280px] h-[1000px] bg-primary-green pt-20'>
 
                     <img src={Logo} alt='Isaac Lerning Logo' className='mb-[50px] pl-[36px]' />
 

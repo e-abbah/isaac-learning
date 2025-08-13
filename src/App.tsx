@@ -39,6 +39,7 @@ function App() {
 
         <Route path='/' element={<CourseSelection />} />
 
+        {/* Dashboard page and all its sub pages */}
         <Route path='dashboard' element={<Dashboard />} >
           <Route index element={<MainDashboard />} />
           <Route path='dashboard' element={<MainDashboard />} />
@@ -47,7 +48,9 @@ function App() {
           <Route path='mock-exam' element={<MockExam />} />
           <Route path='community' element={<Community />} />
 
+          {/* Profile page and its ub pages */}
           <Route path='profile' element={<Profile />} >
+            <Route index element={<ProgressSummary />} />
             <Route path='progress-summary' element={<ProgressSummary />} />
             <Route path='activity' element={<Activity />} />
             <Route path='bookmarks' element={<Bookmarks />} />

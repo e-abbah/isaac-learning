@@ -14,12 +14,12 @@ const Profile = () => {
     const name = "John Adekola";
 
     return (
-        <section className="pt-16 pb-194 px-30">
+        <section className="pt-16 px-30">
 
             <p className="font-[700] mb-10 text-[20px]">My Profile</p>
 
 
-            <div className='flex justify-between items-center bg-gradient-to-r from-[#00a36c] to-[#003d28] pt-10 px-20 rounded-tl-[20px] rounded-tr-[20px] mb-[32px] w-[1400px]'>
+            <div className='flex justify-between items-center pt-20 bg-gradient-to-r from-[#00a36c] to-[#003d28] pt-10 px-20 rounded-tl-[20px] rounded-tr-[20px] mb-[32px] w-[70vw] h-[230px]'>
 
                 <div className='flex align-center gap-[20px]'>
 
@@ -45,20 +45,26 @@ const Profile = () => {
 
             </div>
 
-            <nav className=' flex align-center'>
-                <NavLink to='progress-summary' className={'py-[10px]  text-primary-green px-[100px] border-primary-green border-b-[5px] font-[700]'}>Progress Summary</NavLink>
-                <NavLink to='activity' className={'py-[10px] px-[150px] border-b-[1px] border-[#000]'} >Activity</NavLink>
-                <NavLink to='bookmarks' className={'py-[10px] px-[150px] border-b-[1px] border-[#000]'}>Bookmarks</NavLink>
-                <NavLink to='settings' className={'py-[10px] px-[130px] border-b-[1px] border-[#000]'}>Settings</NavLink>
+            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw]'>
+
+                <NavLink to='progress-summary' className={ ({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap' }>
+                    Progress Summary
+                </NavLink>
+
+                <NavLink to='activity' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'py-[13px] px-[100px] text-center text-nowrap'} >
+                    Activity
+                </NavLink>
+
+                <NavLink to='bookmarks' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                    Bookmarks
+                </NavLink>
+
+                <NavLink to='settings' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%]   py-[13px] border-primary-green  border-b-[3px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                    Settings
+                </NavLink>
             </nav>
 
             <Outlet />
-
-
-
-
-
-
         </section>
     )
 }
