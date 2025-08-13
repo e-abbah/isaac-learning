@@ -24,7 +24,8 @@ import NotificationIconGreen from '../../assets/images/icons/dashboard-icons/not
 import ProfileIconGreen from '../../assets/images/icons/dashboard-icons/profile-icon-green.png';
 import CommunityIconGreen from '../../assets/images/icons/dashboard-icons/community-icon-green.png';
 
-
+// Component
+import NavBar from '../../components/navbar/NavBar';
 
 const Dashboard = () => {
 
@@ -44,6 +45,7 @@ const Dashboard = () => {
         <>
             <section className='flex align-center'>
 
+               
 
                 <div className='w-[280px] h-[1000px] bg-primary-green pt-20 relative top-0 bottom-0 h-screen'>
 
@@ -88,7 +90,10 @@ const Dashboard = () => {
                     </nav>
                 </div>
 
-                <Outlet />
+                <div>
+                     <NavBar/>
+                    <Outlet />
+                </div>
             </section>
         </>
     )

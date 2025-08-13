@@ -26,7 +26,7 @@ const Profile = () => {
     const name = "John Adekola";
 
     return (
-        <section className="pt-16 px-30 h-screen overflow-hidden">
+        <section className="pt-16 px-30 h-screen overflow-hidden mt-[100px]">
 
             <p className="font-[700] mb-10 text-[20px]">My Profile</p>
 
