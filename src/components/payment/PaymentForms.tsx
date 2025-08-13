@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Modal from "./CompletionModal"
-import { ModalDetails } from "./ModalDetails"
+import Modal from "../Modal/CompletionModal"
+import { ModalDetails } from "../Modal/ModalDetails"
 
 export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
