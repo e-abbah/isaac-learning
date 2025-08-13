@@ -14,7 +14,7 @@ const Profile = () => {
     const name = "John Adekola";
 
     return (
-        <section className="pt-16 pb-194 px-30">
+        <section className="pt-16 px-30">
 
             <p className="font-[700] mb-10 text-[20px]">My Profile</p>
 
@@ -53,12 +53,6 @@ const Profile = () => {
             </nav>
 
             <Outlet />
-
-
-
-
-
-
         </section>
     )
 }
