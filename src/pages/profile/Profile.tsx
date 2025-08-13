@@ -5,7 +5,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 // Assets
 import Pfp from '../../assets/images/profile-images/pfp.png';
 import ProfileIcon from '../../assets/images/profile-images/add-profile-icon.png';
-import EditIcon from '../../assets/images/icons/Edit.png';
+import EditIcon from '../../assets/images/icons/dashboard-icons/Edit.png';
 
 const Profile = () => {
 
