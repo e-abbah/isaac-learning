@@ -33,7 +33,7 @@ function CourseSelection() {
                         }
                       })
                       // setSelectedPlan(course.title); 
-                      navigate('price')
+                      navigate('/price')
                     }}
                   >Select Course</button>
                   {/* </Link> */}

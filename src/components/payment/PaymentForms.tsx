@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Modal from "../Modal/CompletionModal"
 import { ModalDetails } from "../Modal/ModalDetails"
+import { ProceedButton } from "../utils/ProceedButton"
 
 export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
@@ -15,12 +16,16 @@ export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, s
   )
 }
 
-export const FamilyForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>> }) => {
+export const FamilyForm = ({ isFamily, setIsFamily }: {
+  isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
+  const style = 'bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto';
+  const destination = '/price'
 
   const [emailInput, setEmailInput] = useState(new Array(4).fill(""))
 
   return (
-    <div >
+    <main >
       <div className="lg:w-[50%] self-center m-auto mb-8 ">
         <h1 className="text-2xl text-slate-gray font-bold mt-8">Add other users</h1>
         <p className="text-sub-gray text-[18px]">Enter the email address of the users you want to add on the family plan (You can add up to 4)</p>
@@ -41,10 +46,15 @@ export const FamilyForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIs
             />
           </div>
         )}
+
+        <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto'
+          onClick={() => setIsFamily(!isFamily)}
+        >Pay ₦90,000</button>
+
+        <ProceedButton style={style} destination={destination} />
       </div>
-      <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto'
-        onClick={() => setIsFamily(!isFamily)}
-      >Pay ₦90,000</button>
-    </div>
+
+
+    </main>
   )
 }

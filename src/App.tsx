@@ -39,8 +39,8 @@ function App() {
       <PaymentProvider>
         <ScrollToTop />
         <Routes>
-
-          <Route path='/' element={<CourseSelection />} />
+          {/* 
+          <Route path='/' element={<CourseSelection />} /> */}
 
 <<<<<<< HEAD
         {/* Dashboard page and all its sub pages */}

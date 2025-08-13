@@ -34,7 +34,7 @@ function PricePlan() {
                 <hr className='my-8 border-[#7F8C8D] w-full' />
                 <ul>{indiBenefits.map((benefit) => <li className='flex'><img src={List1} className='w-[32px] h-[32px] mr-2' /><p className='text-left text-base'>{benefit}</p></li>)}
                 </ul>
-                <button className='bg-[#00A36C] p-2 rounded-3xl! w-full bottom-0 text-white text-base mt-6 self-end'
+                <button className='bg-[#00A36C] p-2 rounded-3xl! w-full bottom-0 text-white text-base mt-6 self-end cursor-pointer'
                   onClick={() => {
                     setSelectedPayment(prev => {
                       return {
@@ -55,7 +55,7 @@ function PricePlan() {
                 <hr className='my-8 border-[#FDFEFE] w-full' />
                 <ul>{famBenefits.map((benefit) => <li className='flex'><img src={List1} className='w-[32px] h-[32px] mr-2' /><p className='text-left text-base'>{benefit}</p></li>)}
                 </ul>
-                <button className='bg-[#FDFEFE] p-2 rounded-3xl! w-full bottom-0 text-[#00A36C] text-base mt-6 self-end'
+                <button className='bg-[#FDFEFE] p-2 rounded-3xl! w-full bottom-0 text-[#00A36C] text-base mt-6 self-end cursor-pointer'
                   onClick={() => {
                     setSelectedPayment(prev => {
                       return {
