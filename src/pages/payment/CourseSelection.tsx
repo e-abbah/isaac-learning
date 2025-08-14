@@ -21,7 +21,6 @@ function CourseSelection() {
                 <h1 className='text-2xl! font-extrabold text-black mt-6 '>{course.title}</h1>
                 <p className='text-[#7F8C8D] text-base mt-4 '>{course.description}</p>
                 <div className='justify-items-end '>
-                  {/* <Link to="/price"> */}
                   <button className='bg-[#00A36C] p-6 rounded-xl! w-full bottom-0 text-white text-base mt-4 self-end cursor-pointer'
                     onClick={() => {
                       setSelectedCourse(prev => {
@@ -32,22 +31,15 @@ function CourseSelection() {
                           description: course.description
                         }
                       })
-                      // setSelectedPlan(course.title); 
                       navigate('/price')
                     }}
                   >Select Course</button>
-                  {/* </Link> */}
                 </div>
               </div>
             </div>)}
         </div>
       </div>
 
-      {/* <div>
-        <h1>{chosenCourse.title}</h1>
-        <p>{chosenCourse.description}</p>
-        <img src={chosenCourse.image} />
-      </div> */}
     </div>
   )
 }
