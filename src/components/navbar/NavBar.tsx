@@ -6,11 +6,13 @@ const NavBar = () => {
 
     const username = "John";
 
-    const showBackButton = true;
+    const showBackButton = false;
 
     return (
-        <nav className="flex items-center justify-between gap-[700px] px-[24px] py-[30px] bg-[#fff] shadow-xl fixed right-0  left-[280px]">
-            {showBackButton ? <BackButton /> : <h1 className="font-[700] text-[16px]">Welcome back, {username}</h1>}
+        <nav className="z-[1000] flex justify-between items-center bg-[#fff] shadow-md fixed right-0 left-[280px] px-[24px] pt-[32px] pb-[20px]">
+            <div>
+                {showBackButton ? <BackButton /> : <h1 className="font-bold text-[20px]">Welcome back, {username}</h1>}
+            </div>
 
             <div className="flex align-center gap-[20px]">
                
@@ -41,7 +43,6 @@ const NavBar = () => {
                 </div>
 
             </div>
-
         </nav>
     )
 }

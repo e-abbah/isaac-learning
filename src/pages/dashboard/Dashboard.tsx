@@ -1,5 +1,5 @@
 // React Router Hooks
-import { Routes, Route, Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 
 // React Hooks
@@ -43,11 +43,11 @@ const Dashboard = () => {
 
     return (
         <>
-            <section className='flex align-center'>
+            <section className='flex gap-[2000px]'>
 
                
 
-                <div className='w-[280px] h-[1000px] bg-primary-green pt-20 relative top-0 bottom-0 h-screen'>
+                <div className='w-[280px] h-[1000px] bg-primary-green pt-20 fixed top-0 bottom-0 h-screen'>
 
                     <img src={Logo} alt='Isaac Lerning Logo' className='mb-[50px] pl-[36px]' />
 
@@ -92,7 +92,9 @@ const Dashboard = () => {
 
                 <div>
                      <NavBar/>
-                    <Outlet />
+                     <div className='mt-[100px] fixed left-[280px] px-[80px] pt-[16px] right-0'>
+                        <Outlet />
+                     </div>
                 </div>
             </section>
         </>
