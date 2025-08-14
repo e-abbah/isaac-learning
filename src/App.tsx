@@ -51,7 +51,7 @@ function App() {
             <Route path='mock-exam' element={<MockExam />} />
             <Route path='community' element={<Community />} />
 
-            {/* Profile page and its ub pages */}
+            {/* Profile page and its sub pages */}
             <Route path='profile' element={<Profile />} >
               <Route index element={<ProgressSummary />} />
               <Route path='progress-summary' element={<ProgressSummary />} />

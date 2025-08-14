@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { IndividualForm, FamilyForm } from "../../components/payment/PaymentForms"
-import arrow from "../../assets/images/icons/payment-icons/arrow-left.png"
-import { Link, Outlet } from "react-router-dom"
-import { usePayment } from "../../context/PaymentContext"
+import { usePayment } from "../../context/PaymentContext";
+
+import BackButton from "../../components/back-button/BackButton";
 
 
 function IndividualPayment() {
@@ -18,11 +18,9 @@ function IndividualPayment() {
   return (
     <div className="text-center py-20 px-20">
       <div className="content-center">
-        <Link to='/price'>
-          <div className="text-slate-gray p-[10px] text-[14px] font-bold w-[91px] justify-between flex bg-[#EBEBEB] rounded-xl cursor-pointer">
-            <img src={arrow} />
-            <p>Back</p>
-          </div></Link>
+
+        <BackButton />
+
         <div className="mb-10">
           <h1 className="text-[40px] font-bold text-slate-gray">Make Payment</h1>
           <p className="text-[18px] text-[#7F8C8D]">Kindly enter the correct details to make payment for your selected course</p>
@@ -86,7 +84,6 @@ function IndividualPayment() {
           {isFamily ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> : <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
         </div>
       </div>
-      <Outlet />
     </div>
   )
 }

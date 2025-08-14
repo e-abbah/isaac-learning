@@ -24,7 +24,8 @@ import NotificationIconGreen from '../../assets/images/icons/dashboard-icons/not
 import ProfileIconGreen from '../../assets/images/icons/dashboard-icons/profile-icon-green.png';
 import CommunityIconGreen from '../../assets/images/icons/dashboard-icons/community-icon-green.png';
 
-
+// Component
+import NavBar from '../../components/navbar/NavBar';
 
 const Dashboard = () => {
 
@@ -44,15 +45,16 @@ const Dashboard = () => {
         <>
             <section className='flex align-center'>
 
+               
 
-                <div className='w-[280px] h-[1000px] bg-primary-green pt-20'>
+                <div className='w-[280px] h-[1000px] bg-primary-green pt-20 relative top-0 bottom-0 h-screen'>
 
                     <img src={Logo} alt='Isaac Lerning Logo' className='mb-[50px] pl-[36px]' />
 
                     <nav className='flex flex-col gap-[20px]'>
 
-                        <Link to='/dashboard' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath == "/dashboard" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={currentPath == "/dashboard" ? DashbboardIconGreen : DashboardIconWhite} alt='module icon' />
+                        <Link to='/dashboard' className={`flex gap-[16px] text-[#fff] py-5 pl-[10px] mx-10 ${currentPath.includes("/dashboard") && pathname == "/dashboard" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
+                            <img src={currentPath.includes("/dashboard") && pathname == "/dashboard" ? DashbboardIconGreen : DashboardIconWhite} alt='module icon' />
                             Dashboard
                         </Link>
 
@@ -76,8 +78,8 @@ const Dashboard = () => {
                             Community
                         </Link>
 
-                        <Link to='profile' className={`flex gap-[16px] text-[#fff] py-5 px-[10px] w-50 mx-10 ${currentPath == "/dashboard/profile" ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
-                            <img src={currentPath == "/dashboard/profile" ? ProfileIconGreen : ProfileIconWhite} alt='module icon' />
+                        <Link to='profile' className={`flex gap-[16px] text-[#fff] py-5 px-[10px] w-50 mx-10 ${currentPath.includes("/dashboard/profile")  ? "bg-[#fff] text-primary-green rounded-[10px]" : ""}`} onClick={() => setCurrentPath(pathname)}>
+                            <img src={currentPath.includes("/dashboard/profile")  ? ProfileIconGreen : ProfileIconWhite} alt='module icon' />
                             Profile
                         </Link>
 
@@ -88,7 +90,10 @@ const Dashboard = () => {
                     </nav>
                 </div>
 
-                <Outlet />
+                <div>
+                     <NavBar/>
+                    <Outlet />
+                </div>
             </section>
         </>
     )

@@ -1,5 +1,8 @@
 // React Router Hooks
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+
+// React Hooks
+import { useEffect, useState } from 'react';
 
 
 // Assets
@@ -9,12 +12,21 @@ import EditIcon from '../../assets/images/icons/dashboard-icons/Edit.png';
 
 const Profile = () => {
 
+    const { pathname } = useLocation();
+    const [indexPath, setIndexPath] = useState(pathname);
+
+    useEffect(() => {
+        setIndexPath(pathname);
+    },[pathname]);
+
+
+
     document.title = "profile - Isaac Learning";
 
     const name = "John Adekola";
 
     return (
-        <section className="pt-16 px-30">
+        <section className="pt-16 px-30 h-screen overflow-hidden mt-[100px]">
 
             <p className="font-[700] mb-10 text-[20px]">My Profile</p>
 
@@ -24,8 +36,8 @@ const Profile = () => {
                 <div className='flex align-center gap-[20px]'>
 
                     <div className='relative'>
-                        <img src={Pfp} className='mb-20 w-[130px] h-[130px]' alt='profile image' />
-                        <img src={ProfileIcon} className='w-[30px] h-[30px] absolute right-[-10px] top-[60px]' alt='pick profile image icon' />
+                        <img src={Pfp} className='mb-20 w-[130px] h-[130px]' alt='profile image cursor-pointer' />
+                        <img src={ProfileIcon} className='w-[30px] h-[30px] absolute right-[-10px] top-[60px]' alt='pick profile image icon cursor-pointer' />
                     </div>
 
                     <div>
@@ -36,30 +48,31 @@ const Profile = () => {
                             at a time.
                         </p>
                     </div>
+
                 </div>
 
-                <button className='flex align-center justify-center gap-[8px] bg-[#fcfcfc]  h-[50px] w-[137px] py-[15px] rounded-[10px]'>
+                <button className='flex align-center justify-center gap-[8px] bg-[#fcfcfc]  h-[50px] w-[137px] py-[15px] rounded-[10px] cursor-pointer'>
                     <p className='text-[#00a36cff] font-bold'>Edit bio</p>
                     <img src={EditIcon} className='w-[25px] h-[25px]' alt='edit icon' />
                 </button>
 
             </div>
 
-            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw]'>
+            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw] mb-[24px]'>
 
-                <NavLink to='progress-summary' className={ ({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap' }>
+                <NavLink to='progress-summary' className={indexPath == "/dashboard/profile" || indexPath == "/dashboard/profile/progress-summary" ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap'}>
                     Progress Summary
                 </NavLink>
 
-                <NavLink to='activity' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'py-[13px] px-[100px] text-center text-nowrap'} >
+                <NavLink to='activity' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'py-[13px] px-[100px] text-center text-nowrap'} >
                     Activity
                 </NavLink>
 
-                <NavLink to='bookmarks' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                <NavLink to='bookmarks' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
                     Bookmarks
                 </NavLink>
 
-                <NavLink to='settings' className={({isActive}) => isActive ? 'text-primary-green text-center w-[100%]   py-[13px] border-primary-green  border-b-[3px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
+                <NavLink to='settings' className={({ isActive }) => isActive ? 'text-primary-green text-center w-[100%]   py-[13px] border-primary-green  border-b-[3px] font-[700]' : 'px-[150px] py-[13px] text-center text-nowrap'}>
                     Settings
                 </NavLink>
             </nav>
