@@ -26,12 +26,12 @@ const Profile = () => {
     const name = "John Adekola";
 
     return (
-        <section className="pt-16 px-30 h-screen overflow-hidden mt-[100px]">
+        <section className="h-screen w-[100%]">
 
-            <p className="font-[700] mb-10 text-[20px]">My Profile</p>
+            <p className="font-[700] mb-[15px] text-[20px]">My Profile</p>
 
 
-            <div className='flex justify-between items-center pt-20 bg-gradient-to-r from-[#00a36c] to-[#003d28] pt-10 px-20 rounded-tl-[20px] rounded-tr-[20px] mb-[32px] w-[70vw] h-[230px]'>
+            <div className='flex justify-between items-center pt-20 bg-gradient-to-r from-[#00a36c] to-[#003d28] pt-10 px-20 rounded-tl-[20px] rounded-tr-[20px] mb-[32px] w-[100%] h-[230px]'>
 
                 <div className='flex align-center gap-[20px]'>
 
@@ -58,7 +58,7 @@ const Profile = () => {
 
             </div>
 
-            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw] mb-[24px]'>
+            <nav className=' flex align-center w-[100%] border-b-[1px] w-[70vw]'>
 
                 <NavLink to='progress-summary' className={indexPath == "/dashboard/profile" || indexPath == "/dashboard/profile/progress-summary" ? 'text-primary-green text-center w-[100%] py-[13px] border-primary-green border-b-[5px] font-[700] text-nowrap' : 'py-[13px] px-[100px] text-center text-nowrap'}>
                     Progress Summary
@@ -77,7 +77,9 @@ const Profile = () => {
                 </NavLink>
             </nav>
 
-            <Outlet />
+            <div className='py-[1px]'>
+                <Outlet />
+            </div>
         </section>
     )
 }
