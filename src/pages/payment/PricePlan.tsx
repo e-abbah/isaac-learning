@@ -6,11 +6,18 @@ import List1 from '../../assets/images/payment-images/list1-icon.png'
 import '../../App.css'
 import { usePayment } from '../../context/PaymentContext'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function PricePlan() {
   const navigate = useNavigate()
 
-  const { setSelectedPayment } = usePayment()
+  const { selectedPayment, setSelectedPayment } = usePayment()
+
+  useEffect(() => {
+    localStorage.setItem("paymentPlan", selectedPayment.type)
+    console.log(localStorage.getItem('paymentPlan'))
+  }, [selectedPayment])
+
 
   const indiBenefits: string[] = ['Full access to course', 'Modules, quizzes and mock exams', 'Community and daily nuggets', 'No in-app purchases', 'Unlimited learning']
   const famBenefits: string[] = ['Allows groups, team, families', 'Each user has full access to preferred course', 'Community and daily nuggets', 'No in-app purchases', 'Unlimited learning']
