@@ -2,20 +2,40 @@ import BackButton from "../back-button/BackButton";
 import SearchIcon from '../../assets/images/icons/Search.png';
 import OnlineDot from '../../assets/images/online-dot.png';
 
+// React Router Hook
+import { useLocation } from 'react-router-dom';
+
+// React Hooks
+import { useState, useEffect } from 'react';
+
 const NavBar = () => {
+
+    const { pathname } = useLocation();
+
+    const [currentPath, setCurrentPath] = useState(pathname);
+    const [showBackButton, setShowBackButton] = useState(false);
+
+
+    useEffect(() => {
+        setCurrentPath(pathname);
+    }, [pathname]);
+
+
 
     const username = "John";
 
-    const showBackButton = false;
+    // const showBackButton = false;
 
     return (
         <nav className="z-[1000] flex justify-between items-center bg-[#fff] shadow-md fixed right-0 left-[280px] px-[24px] pt-[32px] pb-[20px]">
             <div>
-                {showBackButton ? <BackButton /> : <h1 className="font-bold text-[20px]">Welcome back, {username}</h1>}
+                {currentPath.includes("personal-details") || currentPath.includes("notification-settings") || currentPath.includes("privacy") || currentPath.includes("help") || currentPath.includes("account-management") ? 
+                <BackButton /> 
+                : <h1 className="font-bold text-[20px]">Welcome back, {username}</h1>}
             </div>
 
             <div className="flex align-center gap-[20px]">
-               
+
                 <div className="flex gap-[8px] border-[1px] border-[#999999] px-[16px] py-[12px] rounded-[100px] w-[300px]">
                     <img src={SearchIcon} alt="search icon" />
                     <input type='search' placeholder="search here" className="text-[#99999]" />
@@ -34,10 +54,10 @@ const NavBar = () => {
 
                     <div className="flex-col">
                         <h3 className="font-[400] text-[20px]">John Adekola</h3>
-                        
+
                         <div className="flex">
                             <p>Online </p>
-                            <img src={OnlineDot} className="w-[10px] h-[10px]"/>
+                            <img src={OnlineDot} className="w-[10px] h-[10px]" />
                         </div>
                     </div>
                 </div>

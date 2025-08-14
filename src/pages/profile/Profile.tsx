@@ -77,7 +77,7 @@ const Profile = () => {
                 </NavLink>
             </nav>
 
-            <div className='py-[1px]'>
+            <div className='pt-[24px]'>
                 <Outlet />
             </div>
         </section>
