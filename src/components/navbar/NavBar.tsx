@@ -13,7 +13,7 @@ const NavBar = () => {
             {showBackButton ? <BackButton /> : <h1 className="font-[700] text-[16px]">Welcome back, {username}</h1>}
 
             <div className="flex align-center gap-[20px]">
-               
+
                 <div className="flex gap-[8px] border-[1px] border-[#999999] px-[16px] py-[12px] rounded-[100px] w-[300px]">
                     <img src={SearchIcon} alt="search icon" />
                     <input type='search' placeholder="search here" className="text-[#99999]" />
@@ -32,10 +32,10 @@ const NavBar = () => {
 
                     <div className="flex-col">
                         <h3 className="font-[400] text-[20px]">John Adekola</h3>
-                        
+
                         <div className="flex">
                             <p>Online </p>
-                            <img src={OnlineDot} className="w-[10px] h-[10px]"/>
+                            <img src={OnlineDot} className="w-[10px] h-[10px]" />
                         </div>
                     </div>
                 </div>
