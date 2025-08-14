@@ -1,4 +1,3 @@
-import bookmark from '../../assets/images/profile-images/bookmark.png';
 import like from '../../assets/images/profile-images/like.png';
 import comment from '../../assets/images/profile-images/comment.png';
 import bookmarked from '../../assets/images/profile-images/bookmark-icon.png';
