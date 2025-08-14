@@ -1,7 +1,9 @@
 import './App.css';
 
 // Recat Router Hooks
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CreateAccountPage from './pages/createaccount/CreateAccountPage';
+
 
 
 // Context Provider Import
@@ -45,11 +47,18 @@ function App() {
 
   return (
     <BrowserRouter>
+<<<<<<< HEAD
       <PaymentProvider>
         <ScrollToTop />
         <Routes>
 
           <Route path='/' element={<CourseSelection />} />
+=======
+      <ScrollToTop />
+      <Routes>
+        <Route path = "/create-account" element={<CreateAccountPage />} />
+        <Route path='/' element={<CourseSelection />} />
+>>>>>>> my-changes
 
           {/* Dashboard page and all its sub pages */}
           <Route path='dashboard' element={<Dashboard />} >
