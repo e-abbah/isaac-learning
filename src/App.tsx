@@ -1,7 +1,9 @@
 import './App.css';
 
 // Recat Router Hooks
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CreateAccountPage from './pages/createaccount/CreateAccountPage';
+
 
 // Pages Import
 import Dashboard from './pages/dashboard/Dashboard';
@@ -36,7 +38,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-
+        <Route path = "/create-account" element={<CreateAccountPage />} />
         <Route path='/' element={<CourseSelection />} />
 
         {/* Dashboard page and all its sub pages */}
