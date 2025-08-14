@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { IndividualForm, FamilyForm } from "../../components/payment/PaymentForms"
-import arrow from "../../assets/images/icons/payment-icons/arrow-left.png"
-import { Link, Outlet } from "react-router-dom"
 import { usePayment } from "../../context/PaymentContext";
 
 import BackButton from "../../components/back-button/BackButton";
@@ -21,7 +19,7 @@ function IndividualPayment() {
     <div className="text-center py-20 px-20">
       <div className="content-center">
 
-        <BackButton/>
+        <BackButton />
 
         <div className="mb-10">
           <h1 className="text-[40px] font-bold text-slate-gray">Make Payment</h1>
@@ -86,7 +84,6 @@ function IndividualPayment() {
           {isFamily ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> : <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
         </div>
       </div>
-      <Outlet />
     </div>
   )
 }
