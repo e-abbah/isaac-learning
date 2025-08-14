@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Modal from "../Modal/CompletionModal"
 import { ModalDetails } from "../Modal/ModalDetails"
 import { ProceedButton } from "../utils/ProceedButton"
@@ -6,8 +6,8 @@ import { ProceedButton } from "../utils/ProceedButton"
 export const IndividualForm = ({ isFamily, setIsFamily }: { isFamily: boolean, setIsFamily: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
     <div>
-      <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto'
-        onClick={() => setIsFamily(!isFamily)}
+      <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white text-[18px] font-bold mt-6 lg:w-[50%] self-center m-auto'
+        onClick={() => setIsFamily(true)}
       >Pay ₦20,000</button>
       <Modal isFamily={isFamily} >
         <ModalDetails setIsFamily={setIsFamily} />
@@ -21,10 +21,18 @@ export const FamilyForm = ({ isFamily, setIsFamily }: {
 }) => {
   const style = 'bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 self-end lg:w-[50%] self-center m-auto';
   const destination = '/price'
-  const emailValid = /^(\w+)(@([a-z]|[0-9])+)(\.([a-z]|[0-9])+)(\.([a-z]|[0-9])+)?$/i
+  const emailValid = /(^(\w+)(@([a-z]|[0-9])+)(\.([a-z]|[0-9])+)(\.([a-z]|[0-9])+)?$)/i
 
   const [emailInput, setEmailInput] = useState(new Array(4).fill(""))
-  const [isValid, setIsValid] = useState(true)
+  const [isEmailValid, setIsEmailValid] = useState(new Array(4).fill(true))
+  const isValid = isEmailValid.every(el => el == true)
+  useEffect(() => {
+    const updated = emailInput.map((email) => {
+      return email ? emailValid.test(email) : true
+    })
+    setIsEmailValid(updated)
+    console.log("Updated isEmailValids:", updated);
+  }, [emailInput])
 
   return (
     <main >
@@ -43,30 +51,20 @@ export const FamilyForm = ({ isFamily, setIsFamily }: {
                 setEmailInput([
                   ...emailInput.map((data, indx) => { return indx == index ? e.target.value : data; }
                   )])
-                // console.log(emailValid.test(email))
-                console.log(emailInput[index], ' is ', isValid)
-                emailInput[index].length > 0 ? setIsValid(false) : setIsValid(true)
-                // console.log(isValid)
-                // emailValid.test(emailInput[index]) ? setIsValid(true) : (email.length == 0 ? setIsValid(true) : setIsValid(false))
-                // console.log(emailInput[index], ' is ', isValid)
-                // console.log(isValid)
-
               }
               }
             />
           </div>
         )}
-
-        <button className='bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 lg:w-[50%] self-center m-auto '
+        <button className={`bg-[#00A36C] p-[10px] rounded-[10px]! cursor-pointer w-full bottom-0 text-white  text-[18px] font-bold mt-6 lg:w-[50%] self-center m-auto ${isValid ? '' : 'opacity-50'}`}
 
           disabled={isValid ? false : true}
-          onClick={() => setIsFamily(!isFamily)}
+          onClick={() => { console.log(isFamily); setIsFamily(true) }}
         >Pay ₦90,000</button>
-
-        {/* <ProceedButton style={style} destination={destination} /> */}
       </div>
-
-
+      <Modal isFamily={isFamily} >
+        <ModalDetails setIsFamily={setIsFamily} />
+      </Modal>
     </main>
   )
 }
