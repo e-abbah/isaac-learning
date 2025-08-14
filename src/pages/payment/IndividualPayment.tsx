@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { IndividualForm, FamilyForm } from "../../components/payment/PaymentForms"
-import arrow from "../../assets/images/icons/payment-icons/arrow-left.png"
-import { Link, Outlet } from "react-router-dom"
 import { usePayment } from "../../context/PaymentContext";
 
 import BackButton from "../../components/back-button/BackButton";
@@ -14,14 +12,18 @@ function IndividualPayment() {
   const [expiryDate, setExpiryDate] = useState('')
   const [cvv, setCvv] = useState('')
   const { selectedCourse, selectedPayment } = usePayment()
+  const storedPlan = localStorage.getItem("paymentPlan")
+  const nameValid = /^([a-z]+)(\s)([a-z]+)(?:( )([a-z]+))?$/i
   const numberValid = /^\d+$/
   const expiryCheck = /^$/
+  console.log(localStorage.getItem('paymentPlan'))
+
 
   return (
     <div className="text-center py-20 px-20">
       <div className="content-center">
 
-        <BackButton/>
+        <BackButton />
 
         <div className="mb-10">
           <h1 className="text-[40px] font-bold text-slate-gray">Make Payment</h1>
@@ -43,6 +45,7 @@ function IndividualPayment() {
                 value={cardName}
                 onChange={(e) => setCardName(e.target.value)}
               />
+              {/* {nameValid.test(cardName) ? '' : <p className="text-red-600 text-sm font-bold">fix this</p>} */}
             </div>
             <div className=" w-full">
               <p className="text-sub-gray text-xs text-left mb-2">Card number</p>
@@ -83,10 +86,10 @@ function IndividualPayment() {
           </div>
         </div>
         <div className="w-full  mt-2">
-          {isFamily ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> : <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
+          {storedPlan == 'Individual' ? <IndividualForm isFamily={isFamily} setIsFamily={setIsFamily} /> :
+            <FamilyForm isFamily={isFamily} setIsFamily={setIsFamily} />}
         </div>
       </div>
-      <Outlet />
     </div>
   )
 }
